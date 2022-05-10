@@ -1,3 +1,6 @@
 .DS_Store
 startup.sh
 node_modules/
+jspm_packages/
+.npm
+

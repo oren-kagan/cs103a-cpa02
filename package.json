@@ -1,0 +1,26 @@
+{
+    "name": "cs103a-cpa02",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "start": "node app.js",
+        "devstart": "nodemon app.js",
+        "serverstart": "DEBUG=cs103a-cpa02:* npm run devstart"
+    },
+    "dependencies": {
+        "axios": "^0.26.1",
+        "bcrypt": "^5.0.1",
+        "connect-flash": "^0.1.1",
+        "cookie-parser": "~1.4.4",
+        "debug": "~2.6.9",
+        "ejs": "^3.1.7",
+        "express": "~4.16.1",
+        "express-ejs-layouts": "^2.5.1",
+        "express-session": "^1.16.2",
+        "http-errors": "~1.6.3",
+        "mongoose": "^5.9.21"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.16"
+    }
+}
