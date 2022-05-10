@@ -11,12 +11,16 @@ const debug = require("debug")("personalapp:server");
 const layouts = require("express-ejs-layouts");
 const axios = require("axios")
 
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
+
+
 // *********************************************************** //
 //  Connecting to the database
 // *********************************************************** //
 
 const mongoose = require( 'mongoose' ); 
-const mongoDB_URI = 'mongodb+srv://blueoren:SvhRsS6e5ICtT8GA@firstcluster.ebsr5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const mongoDB_URI = 'mongodb+srv://blueoren:SvhRsS6e5ICtT8GA@firstcluster.ebsr5.mongodb.net/cs103a-cpa02?retryWrites=true&w=majority'
 
 mongoose.connect( mongodb_URI,
     { useNewUrlParser: true, useUnifiedTopology: true } );
@@ -53,6 +57,10 @@ app.use(cookieParser());
 // Here we specify that static files will be in the public folder
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use('/', indexRouter);
+app.use('/', usersRouter);
+
+
 // Here we enable session handling using cookies
 app.use(
   session({
@@ -62,5 +70,10 @@ app.use(
   })
 );
 
+
+
+
+
+module.exports = app;
 
 
